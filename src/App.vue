@@ -1,34 +1,40 @@
 <template>
   <div id="app">
+    <Header />
+    <main>
+      <router-view />
+    </main>
+    <notifications group="cart" position="bottom right" />
   </div>
 </template>
 
 <script>
+import Header from '@/components/ui/MainHeader.vue'
 
 export default {
-  name: "App",
-  components: {
-    Form,
-  },
-};
+  name: 'App',
+  components: { Header },
+  async created() {
+    await this.$store.dispatch('loadProductsList')
+  }
+}
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   color: #2c3e50;
   background-color: #fafafa;
-  padding: 24px;
   box-sizing: border-box;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
-html,
-body,
-#app {
-  height: 100%;
-}
-
-* {
-  box-sizing: border-box;
+main {
+  padding: 8px;
+  background: rgb(255, 254, 251);
+  flex-grow: 1;
 }
 </style>
