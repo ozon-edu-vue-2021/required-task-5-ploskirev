@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+:root {
+  --primary-color: #005bff;
+  --secondary-color: #e43659;
+  --accent-color: #4faa51;
+  --faded-color: #ccc;
+  --light-color: rgb(250, 248, 244);
+  --link-color: #555;
+  --linkHovered-color: #888;
+  --text-color: #555;
+  --fadedText-color: #777;
+}
+
+.page-heading {
+  margin: 20px 0;
+  padding: 0 8px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.productslist-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 600px) {
+  .productslist-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .productslist-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 300px) {
+  .productslist-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.products-list-empty {
+  padding: 16px;
+  color: var(--fadedText-color);
+  font-weight: 100;
+}
+
+.product-button-favorite {
+  border: none;
+  background: transparent;
+  fill: var(--secondary-color);
+  line-height: 1;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s;
+}
+
+.product-button-favorite:hover {
+  transform: scale(1.1);
+}
+
+.text-limit-3 {
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -ms-line-clamp: 3;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  display: -webkit-box;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+}
+
+.text-limit-5 {
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -ms-line-clamp: 5;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  display: -webkit-box;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+}

@@ -1,8 +1,17 @@
-import Vue from 'vue';
-import App from './App.vue';
+import Vue from 'vue'
+import App from './App.vue'
+import Notifications from 'vue-notification'
+import 'reset-css'
+import store from '@/store'
+import router from '@/router'
+import '@/assets/styles/main.css'
 
-Vue.config.productionTip = false;
+Vue.use(Notifications)
+
+Vue.config.productionTip = false
 
 new Vue({
-    render: (h) => h(App),
-}).$mount('#app');
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')
